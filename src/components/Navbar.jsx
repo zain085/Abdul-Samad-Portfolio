@@ -6,7 +6,7 @@ export default function Navbar() {
     <header className="site-nav">
       <nav className="navbar navbar-expand-lg container" aria-label="Main">
         <a className="brand" href="#top">
-          {profile.firstName}<span>.</span>
+          <span>{profile.firstName}</span> {profile.lastName}<span>.</span>
         </a>
         <button
           className="navbar-toggler"

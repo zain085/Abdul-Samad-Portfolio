@@ -106,12 +106,287 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-
 .tags li { font-size: .85rem; font-weight: 500; padding: .3rem .75rem; border-radius: 6px; background: var(--tint); }
 .skill-card.primary .tags li { background: rgba(255, 255, 255, .15); }
 
-/* Education */
-.edu-card { height: 100%; background: #fff; border: 1px solid var(--line); border-bottom: 3px solid var(--accent); border-radius: var(--radius); padding: 1.4rem; transition: transform .25s; }
-.edu-card:hover { transform: translateY(-3px); }
-.edu-year { font-family: "Fraunces", serif; font-size: 1.8rem; font-weight: 700; color: var(--accent); }
-.edu-card h3 { font-size: 1.05rem; margin: .3rem 0; }
-.edu-card p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+/* ========================================
+   EDUCATION SECTION
+======================================== */
+
+.education-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.education-heading {
+  max-width: 650px;
+  margin-bottom: 2.5rem;
+}
+
+.education-heading h2 {
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.education-intro {
+  max-width: 540px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.education-grid {
+  align-items: stretch;
+}
+
+/* Education card */
+
+.edu-card {
+  --edu-index: 0;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 285px;
+  padding: 1.5rem;
+  overflow: hidden;
+
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: 0 5px 20px rgba(20, 35, 30, 0.035);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+
+  animation-delay: calc(var(--edu-index) * 70ms);
+}
+
+/* Subtle accent at the top */
+
+.edu-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0, 128, 110, 0.25);
+  box-shadow: 0 16px 35px rgba(20, 35, 30, 0.09);
+}
+
+.edu-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Current qualification */
+
+.edu-card-current {
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #f2faf7 100%
+  );
+  border-color: rgba(0, 128, 110, 0.25);
+}
+
+.edu-card-current::before {
+  transform: scaleX(1);
+}
+
+/* Top row */
+
+.edu-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.edu-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+
+  color: var(--accent);
+  background: rgba(0, 128, 110, 0.08);
+  border: 1px solid rgba(0, 128, 110, 0.12);
+  border-radius: 12px;
+
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.edu-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.65rem;
+
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-current {
+  color: #087b65;
+  background: #e4f5ef;
+}
+
+.status-completed {
+  color: #64716c;
+  background: #f0f3f1;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-current .status-dot {
+  box-shadow: 0 0 0 3px rgba(8, 123, 101, 0.1);
+}
+
+/* Main content */
+
+.edu-card-content {
+  flex: 1;
+}
+
+.edu-year {
+  display: block;
+  margin-bottom: 0.5rem;
+
+  color: var(--accent);
+  font-family: "Fraunces", serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.edu-card h3 {
+  margin: 0 0 1rem;
+  color: var(--text);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: -0.015em;
+  overflow-wrap: anywhere;
+}
+
+.edu-school {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.edu-school svg {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--accent);
+}
+
+/* Bottom row */
+
+.edu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 500;
+}
+
+.edu-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 29px;
+  height: 29px;
+  flex-shrink: 0;
+
+  color: var(--accent);
+  background: #f1f7f5;
+  border-radius: 50%;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.edu-card:hover .edu-arrow {
+  transform: translate(2px, -2px);
+  background: #e0f2ec;
+}
+
+/* Responsive adjustments */
+
+@media (max-width: 575.98px) {
+  .education-heading {
+    margin-bottom: 1.75rem;
+  }
+
+  .edu-card {
+    min-height: 255px;
+    padding: 1.25rem;
+  }
+
+  .edu-card-top {
+    margin-bottom: 1.5rem;
+  }
+
+  .edu-card h3 {
+    font-size: 1.08rem;
+  }
+
+  .edu-year {
+    font-size: 1.5rem;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .edu-card,
+  .edu-card::before,
+  .edu-arrow {
+    animation: none;
+    transition: none;
+  }
+
+  .edu-card:hover {
+    transform: none;
+  }
+}
+
 
 /* Contact */
 .contact { background: var(--ink); color: #fff; padding: clamp(4rem, 9vw, 7rem) 0; }

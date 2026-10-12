@@ -18,7 +18,9 @@ export const profile = {
     "Hardworking and adaptable professional with experience across software technical support, SQL development support, and business development. My background combines technical problem-solving with clear client communication and practical business understanding.",
   about: [
     "I currently work in software technical support for HRIS/HRM systems, helping users troubleshoot issues and supporting the Linux environments behind the services.",
+
     "Previously, I worked at Eyecon Consultant, progressing from SQL Developer Intern to SQL Developer. That experience gave me practical exposure to SQL queries, database support, reporting needs, and day-to-day technical requests.",
+
     "I also started my professional career in business development, where I developed strong communication, follow-up, and client-handling skills. That combination helps me approach technical problems with both the system and the person using it in mind.",
   ],
 };
@@ -40,7 +42,7 @@ export const experience = [
     current: true,
     points: [
       "Provide end-to-end technical support for HRIS/HRM software users, from issue identification through resolution.",
-      "Support Linux system-related tasks to help maintain stable software services and user access.",
+      "Support Linuro system-related tasks to help maintain stable software services and user access.",
       "Coordinate with internal teams to track incidents, document fixes, and improve response turnaround.",
     ],
   },
@@ -72,7 +74,7 @@ export const skills = [
   {
     group: "Technical",
     description: "Core technical capabilities used across support and development work.",
-    items: ["SQL", "HRIS / HRM Software Support", "Web Development", "WordPress", "Linux Systems"],
+    items: ["SQL Developer", "Database Administrator", "HRIS / HRM Software Support", "POS Software Support", "Web Development", "WordPress Development", "SQA Testing"],
   },
   {
     group: "Business & Communication",
@@ -82,13 +84,14 @@ export const skills = [
   {
     group: "Tools",
     description: "Software and productivity tools used in professional work.",
-    items: ["Microsoft Office", "Visual Studio"],
+    items: ["Microsoft Office", "Visual Studio", "Visual Studio Code", "SQL Server Management Studio",],
   },
 ];
 
 export const education = [
-  { title: "Diploma in Software Engineering", school: "Aptech", year: "2026" },
-  { title: "Intermediate", school: "", year: "2022" },
-  { title: "Matric", school: "Elevation Grammar School", year: "2020" },
+  { title: "Bachelors In Computer Science", school: "IQRA University Main Campus", year: "Present" },
+  { title: "Diploma in Software Engineering", school: "Aptech Metro Star Gate Center", year: "2026" },
+  { title: "Intermediate", school: "Govt Degree Science Collage Malir", year: "2022" },
+  { title: "Matriculation", school: "Elevation Grammar School", year: "2020" },
   { title: "Hifz", school: "Madrasa Rehmania", year: "2018" },
 ];

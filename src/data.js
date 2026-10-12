@@ -9,6 +9,8 @@ export const profile = {
   phone: "03141063418",
   phoneLink: "+923141063418",
   email: "sammad2497@gmail.com",
+  linkedIn: "https://www.linkedin.com/in/abdul-samad-68b149251",
+  github: "https://github.com/abdulsamad2497",
   cv: "/Abdul_Samad_CV.pdf",
   intro:
     "I support business software, solve technical issues, work with SQL data, and help teams keep day-to-day systems running smoothly.",

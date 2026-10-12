@@ -1,11 +1,38 @@
+
 import { profile } from "../data";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
   const items = [
-    { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
-    { label: "Phone", value: profile.phone, href: `tel:${profile.phoneLink}` },
-    { label: "Location", value: profile.location },
+    {
+      label: "Email",
+      value: profile.email,
+      href: `mailto:${profile.email}`,
+    },
+    {
+      label: "Phone",
+      value: profile.phone,
+      href: `tel:${profile.phoneLink}`,
+    },
+    {
+      label: "Location",
+      value: profile.location,
+    },
   ];
+
+  const socialLinks = [
+    {
+      label: "LinkedIn",
+      href: profile.linkedIn,
+      icon: FaLinkedin,
+    },
+    {
+      label: "GitHub",
+      href: profile.github,
+      icon: FaGithub,
+    },
+  ];
+
   return (
     <section id="contact" className="contact">
       <div className="container">
@@ -13,19 +40,46 @@ export default function Contact() {
           <div className="col-lg-7 reveal">
             <p className="eyebrow">Contact</p>
             <h2>Have a role or a problem that needs solving?</h2>
-            <a className="btn btn-accent mt-3" href={`mailto:${profile.email}`}>
+
+            <a
+              className="btn btn-accent mt-3"
+              href={`mailto:${profile.email}`}
+            >
               Email {profile.firstName}
             </a>
           </div>
+
           <div className="col-lg-5 reveal">
             <dl className="contact-list">
-              {items.map((i) => (
-                <div key={i.label}>
-                  <dt>{i.label}</dt>
-                  <dd>{i.href ? <a href={i.href}>{i.value}</a> : i.value}</dd>
+              {items.map((item) => (
+                <div key={item.label}>
+                  <dt>{item.label}</dt>
+                  <dd>
+                    {item.href ? (
+                      <a href={item.href}>{item.value}</a>
+                    ) : (
+                      item.value
+                    )}
+                  </dd>
                 </div>
               ))}
             </dl>
+
+            <div className="contact-socials">
+              {socialLinks.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  title={label}
+                  className="contact-social-link"
+                >
+                  <Icon />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>

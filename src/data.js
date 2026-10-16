@@ -17,7 +17,7 @@ export const profile = {
   summary:
     "Hardworking and adaptable professional with experience across software technical support, SQL development support, and business development. My background combines technical problem-solving with clear client communication and practical business understanding.",
   about: [
-    "I currently work in software technical support for HRIS/HRM systems, helping users troubleshoot issues and supporting the Linux environments behind the services.",
+    "I currently work in software technical support for HRIS/HRM systems, helping users troubleshoot issues and supporting the Linuro environments behind the services.",
 
     "Previously, I worked at Eyecon Consultant, progressing from SQL Developer Intern to SQL Developer. That experience gave me practical exposure to SQL queries, database support, reporting needs, and day-to-day technical requests.",
 
